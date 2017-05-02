@@ -18,8 +18,11 @@ names(data.yelp)<-c("from","to","weight")
 if(flag.deg==F){
   
   # create graph filtered by weight
-  theshold.weight<-quantile(data.yelp$weight,theshold.quantile)
-  graph.df<-data.yelp[data.yelp$weight>theshold.weight,]
+  graph.temp=data.yelp[data.yelp$weight==max(data.yelp$weight),]
+  
+  
+  # theshold.weight<-quantile(data.yelp$weight,theshold.quantile)
+  # graph.df<-data.yelp[data.yelp$weight>theshold.weight,]
   
 } else{
   

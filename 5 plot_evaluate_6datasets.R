@@ -18,7 +18,7 @@ for(j in 1:2){
     g.all[[i]]<-ggplot(data=data.temp.2,
                        aes(Proportion,value,color=Methods,shape = Methods,group=Methods))+
       geom_line(size=1.11)+
-      geom_point(size=2.5)+
+      geom_point(size=5)+
       theme_minimal()+
       labs(title = list.dataset[i],x = "Proportion",y = "PCC")+
       theme(

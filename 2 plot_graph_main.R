@@ -1,6 +1,6 @@
 
 # set path and output file names
-path="E:/8sem/YELP/LinkPrediction/plot-yelp"
+path="E:/git/plot-yelp"
 output.name<-"graph-yelp"
 setwd(path)
 
