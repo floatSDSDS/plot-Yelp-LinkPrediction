@@ -9,7 +9,7 @@ showtext.opts(dpi = 240)
 font.add("Times New Roman", "times.ttf")
 
 # set path and output file names
-path="E:/8sem/YELP/LinkPrediction/plot-yelp"
+path="E:/git/plot-yelp"
 output.name<-"histogram-Kdensity-weight"
 
 
@@ -30,7 +30,7 @@ ggplot(data.yelp, aes(weight)) +
  geom_histogram(aes(y=(..count..)/sum(..count..)),color="lightblue",fill="steelblue3")+
   stat_density(size=1,color="navy",fill="navy",alpha=.3,kernel =  "gaussian")+
   theme_minimal()+
-  labs(title = "Yelp Kernel Density Estimation",x = "Proportion",y="")+
+  labs(title = "Yelp Network's Weight Kernel Density Estimation",x = "",y="")+
   theme(
     text=element_text(family = "Times New Roman"),
     legend.position="bottom",

@@ -8,14 +8,9 @@ showtext.auto()
 showtext.opts(dpi = 240)
 font.add("Times New Roman", "times.ttf")
 
-# f_linearnorm<-function(feature){
-#   delta=max(feature)-min(feature)
-#   temp<-(feature-min(feature))/delta
-#   return(temp)
-# }
 
 # set path and output file names
-path="E:/8sem/YELP/LinkPrediction/plot-yelp"
+path="E:/git/plot-yelp"
 output.name<-"yelp_all_features_KDensity"
 
 

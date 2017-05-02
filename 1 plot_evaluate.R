@@ -5,20 +5,8 @@ library(gridExtra)
 library(grid)
 library(Cairo)
 
-# changed font to Times New Roman
-# font_import(recursive = F, prompt = F,pattern="times.ttf")
-# loadfonts(device = "postscript")
-
-
-get_legend<-function(myggplot){
-  tmp <- ggplot_gtable(ggplot_build(myggplot))
-  leg <- which(sapply(tmp$grobs, function(x) x$name) == "guide-box")
-  legend <- tmp$grobs[[leg]]
-  return(legend)
-}
-
 # set path and output file names
-path="E:/8sem/YELP/LinkPrediction/plot-yelp"
+path="E:/git/plot-yelp"
 output.name<-"plot-yelp"
 
 # set output file size and font zooming level
@@ -28,6 +16,7 @@ k=3
 
 # data preProcessing
 setwd(path)
+source("1 fun.R")
 data<-as.data.frame(fread("src/yelp.csv",header=T))
 names(data)<-c("Proportion","Method","PCC","RMSE")
 data$Method<-gsub("xia","Zhu et al.",data$Method)
@@ -75,7 +64,7 @@ g.result[[1]]<-g.result[[1]]+theme(legend.position = "none")
 g.result[[2]]<-g.result[[2]]+theme(legend.position = "none")
 
 
-# output files 
+# export as eps 
 cairo_ps(paste("plot/evaluation/",paste(output.name,Sys.Date(),sep="-"),".eps",sep=""),
          family = "Times",width = g.width, height = g.height)
 grid.result<-grid.arrange(g.result[[1]], g.result[[2]], legend, ncol=2,nrow=2,

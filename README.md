@@ -22,3 +22,7 @@
   - `3 plot_features_density.R`对应所有特征（包含权值）共20个密度曲线
   - 可调参数同1
   - 输出结果在../plot/density
+4. 热力图
+  - `4 heatmap.R` 更改路径，source code
+  - 可调参数同1
+  - 输出结果在../plot/heatmap
