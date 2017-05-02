@@ -79,7 +79,7 @@ g2<-ggplot(data=melted_Value2, aes(x=Var2, y=Var1,fill=value))+
   guides(fill = guide_colorbar(barwidth = 1,barheight = 20))+
   scale_fill_gradientn(
 #    low="#ccffcc", high='#009900',
-    colours=colorRampPalette(brewer.pal(9,"RdYlGn"))(20),
+    colours=rev(colorRampPalette(brewer.pal(9,"RdYlGn"))(20)),
     limits = c(1,19), breaks = c(1, 5, 10, 15, 19))
 
 legend <- get_legend(g2)
