@@ -15,6 +15,7 @@ output.name<-"histogram-Kdensity-weight"
 
 
 # set output file size and font zooming level
+plot.title="Yelp Network's Weight Kernel Density Estimation"
 g.width=8
 g.height=5
 k=1
@@ -30,7 +31,7 @@ ggplot(data.yelp, aes(weight)) +
  geom_histogram(aes(y=(..count..)/sum(..count..)),color="lightblue",fill="steelblue3")+
   stat_density(size=1,color="navy",fill="navy",alpha=.3,kernel =  "gaussian")+
   theme_minimal()+
-  labs(title = "Yelp Network's Weight Kernel Density Estimation",x = "",y="")+
+  labs(title = plot.title,x = "",y="")+
   theme(
     text=element_text(family = "Times New Roman"),
     legend.position="bottom",

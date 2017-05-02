@@ -10,7 +10,9 @@ library(Cairo)
 path="E:/git/plot-yelp"
 output.name<-"heatmap"
 
+
 # set output file size and font zooming level
+plot.title=""
 g.width=16
 g.height=9
 k=2
@@ -43,7 +45,7 @@ melted_Value1<- melt(Value1)
 g1<-ggplot(data=melted_Value1, aes(x=Var2, y=Var1,fill=value))+
   geom_tile()+
   scale_fill_gradient(low="#ccffcc", high='#009900')+
-  labs(x = "",y = "")+
+  labs(title=plot.title, x = "",y = "")+
   scale_x_discrete(expand = c(0, 0))+
   theme()+
   theme(

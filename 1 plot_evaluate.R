@@ -10,9 +10,10 @@ path="E:/git/plot-yelp"
 output.name<-"plot-yelp"
 
 # set output file size and font zooming level
-g.width=16
-g.height=9
-k=3
+g.width=12
+g.height=7
+plot.title=""
+k=1.5
 
 # data preProcessing
 setwd(path)
@@ -38,7 +39,7 @@ for(i in 1:2){
     geom_line(size=1.11)+
     geom_point(size=5)+
     theme_minimal()+
-    labs(title = "",x = "Proportion",y=ifelse(i==1,"PCC","RMSE"))+
+    labs(title = plot.title,x = "Proportion",y=ifelse(i==1,"PCC","RMSE"))+
     theme(
       text=element_text(family = "serif"),
       legend.position="bottom",

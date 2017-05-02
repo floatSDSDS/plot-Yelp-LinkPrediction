@@ -5,6 +5,7 @@
   - 可调参数：
     - 输出文件名output.name
     - 输出文件长宽g.width; g.height，单位inch
+    - 图片标题plot.title
     - 字体缩放倍率k
   - 输出结果在../plot/evaluation
 2. 网络图

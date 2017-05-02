@@ -15,6 +15,7 @@ output.name<-"yelp_all_features_KDensity"
 
 
 # set output file size and font zooming level
+plot.title="Kernel Density Estimation for Yelp Features"
 g.width=16
 g.height=9
 k=2
@@ -39,7 +40,7 @@ ggplot(data.features.melt,aes(value)) +
   #  geom_histogram(aes(y=(..count..)/sum(..count..)),color="lightblue",fill="steelblue3")+
   stat_density(size=1,color="navy",fill=NA,kernel =  "gaussian")+
   theme_minimal()+
-  labs(title = "Kernel Density Estimation for Yelp Features",x = "",y="")+
+  labs(title = plot.title ,x = "",y="")+
   facet_wrap(~variable,nrow=5,ncol=4,scales = "free")+
   theme(
     text=element_text(family = "Times New Roman"),
