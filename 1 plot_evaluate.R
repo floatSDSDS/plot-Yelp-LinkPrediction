@@ -31,11 +31,12 @@ point.shapes=15:19
 names(point.shapes)<-unique(data$Method)
 g.result<-list()
 
-
+data.melt<-melt(data,id.vars=c("Proportion","Method"))
 # plotting
 for(i in 1:2){
-  g.result[[i]]<-ggplot(data=data,aes(as.factor(Proportion),data[,i+2],
-                                      color=Method,group=Method,shape=Method))+
+  g.result[[i]]<-ggplot(data=filter(data.melt,variable==ifelse(i==1,"PCC","RMSE")),
+                        aes(x=as.factor(Proportion),y=value,
+                            color=Method,group=Method,shape=Method))+
     geom_line(size=1.11)+
     geom_point(size=5)+
     theme_minimal()+
@@ -51,7 +52,7 @@ for(i in 1:2){
       strip.text.x = element_text(size = k*12),
       panel.border = element_rect(size = 2,fill=NA),
       
-      plot.title = element_text(size=k*15,hjust = k*0.5),
+      plot.title = element_text(size=k*15,hjust = 0.5),
       axis.title.x = element_text(size = k*15),
       axis.title.y = element_text(size = k*15),
       axis.text.x = element_text(size = k*10),
