@@ -20,7 +20,7 @@ output.name<-"heatmap_reverse"
 # set output file size and font zooming level
 plot.title=""
 g.width=16
-g.height=9
+g.height=6
 k=2
 
 setwd(path)
@@ -47,7 +47,7 @@ for (i in 1:6){
 melted_Value1<- melt(Value1)
 g1<-ggplot(data=melted_Value1, aes(x=Var2, y=Var1,fill=value))+
   geom_tile()+
-  labs(title="", x = "(a)",y = "")+
+  labs(title="", x = "",y = "(a)")+
   scale_x_discrete(expand = c(0, 0))+
   theme()+
   theme(      
@@ -56,7 +56,7 @@ g1<-ggplot(data=melted_Value1, aes(x=Var2, y=Var1,fill=value))+
     # legend.position="top",
     # legend.position = "none",
     plot.title = element_text(size=k*15,hjust = 0.5),
-    axis.text.x=element_text(angle=45,hjust=0.55,vjust=0.6,size=k*10),
+    axis.text.x=element_text(angle=45,hjust=0.75,vjust=0.8,size=k*10),
     axis.text.y = element_text(angle=45,hjust=0.9,size = k*10),
     axis.title.x = element_text(size = k*15),
     axis.title.y = element_text(size = k*15),
@@ -66,7 +66,7 @@ g1<-ggplot(data=melted_Value1, aes(x=Var2, y=Var1,fill=value))+
       #    low="#ccffcc", high='#009900',
       colours=colorRampPalette(brewer.pal(4,"Greens"))(20),
       limits =c(-0.1,1.1), breaks = seq(0,1,length.out = 6))+
-  guides(fill = guide_colorbar(barwidth=2,barheight  = 34))#+
+  guides(fill = guide_colorbar(barwidth=2,barheight  = 17))+
   coord_flip()
 
 
@@ -74,7 +74,7 @@ g1<-ggplot(data=melted_Value1, aes(x=Var2, y=Var1,fill=value))+
 melted_Value2<- melt(Value2)
 g2<-ggplot(data=melted_Value2, aes(x=Var2, y=Var1,fill=value))+
   geom_tile()+
-  labs(title="",x = "(b)",y = "")+
+  labs(title="",x = "",y = "(b)")+
   scale_x_discrete(expand = c(0, 0))+
   theme(      
     legend.title=element_blank(),
@@ -83,7 +83,7 @@ g2<-ggplot(data=melted_Value2, aes(x=Var2, y=Var1,fill=value))+
     # legend.position='top',
     legend.text = element_text(size=k*10),
     plot.title = element_text(size=k*15,hjust = 0.5),    
-    axis.text.x=element_text(angle=45,hjust=0.55,vjust=0.6,size=k*10),
+    axis.text.x=element_text(angle=45,hjust=0.75,vjust=0.8,size=k*10),
     # axis.text.y = element_blank(),  
     axis.text.y = element_text(angle=45,hjust=0.9,size = k*10),
     
@@ -91,10 +91,10 @@ g2<-ggplot(data=melted_Value2, aes(x=Var2, y=Var1,fill=value))+
     axis.title.x = element_text(size = k*15),
     axis.title.y = element_text(size = k*15)
     )+
-  guides(fill = guide_colorbar(barwidth = 2,barheight = 34))+
+  guides(fill = guide_colorbar(barwidth = 2,barheight = 17))+
   scale_fill_gradientn(
     colours=colorRampPalette(brewer.pal(4,"Greens"))(20),
-    limits = c(-0.1,1.1), breaks = seq(0,1,length.out = 6))#+
+    limits = c(-0.1,1.1), breaks = seq(0,1,length.out = 6))+
   coord_flip()
 
 
