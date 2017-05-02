@@ -27,3 +27,8 @@
   - `4 heatmap.R` 更改路径，source code
   - 可调参数同1
   - 输出结果在../plot/heatmap
+5. 六个数据集指标折线图
+  - 打开 `5 six dataset main.R`，调整设定，source code
+  - 图片细节在`5plot_evaluate_6dataset.R`
+  - 可调参数同1
+  - 输出结果在.../plot/evaluation
