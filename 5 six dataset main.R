@@ -4,15 +4,9 @@ library(xlsx)
 library(dplyr)
 library(RColorBrewer)
 library(plyr)
-library(showtext)
-
-# this method usees system font, so it may be different on Mac OS
-# to check specific what :Times New Roman" names, check "font.paths()" and "font.files()"
-# note that remember to uncomment the line in "1 plot-all.R" in theme
-
-showtext.auto()
-showtext.opts(dpi = 120)
-font.add("Times New Roman", "times.ttf")
+library(gridExtra)
+library(grid)
+library(Cairo)
 
 # set path
 #############################################
@@ -37,6 +31,7 @@ k=1.5
 # plotting, for details go check script 1 plot-all.R
 # select point shapes
 # check shape library by typing: ?pch
+
 point.shapes=15:19
 source("5 plot_evaluate_6datasets.R",encoding = "UTF-8")
 

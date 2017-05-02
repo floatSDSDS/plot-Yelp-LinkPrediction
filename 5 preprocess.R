@@ -13,3 +13,16 @@ raw$Dataset<-gsub("celegans","Celegans",raw$Dataset)
 raw$Dataset<-gsub("lesmis","Lesmis",raw$Dataset)
 raw$Dataset<-gsub("netscience","NetScience",raw$Dataset)
 raw$Dataset<-gsub("catbrain","CatCortex",raw$Dataset)
+
+
+
+get_legend<-function(myggplot){
+  tmp <- ggplot_gtable(ggplot_build(myggplot))
+  leg <- which(sapply(tmp$grobs, function(x) x$name) == "guide-box")
+  legend <- tmp$grobs[[leg]]
+  return(legend)
+}
+
+fmt_dcimals <- function(decimals=0){
+  function(x) format(x,nsmall = decimals,scientific = FALSE)
+}

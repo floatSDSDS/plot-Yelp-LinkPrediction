@@ -44,7 +44,8 @@ ggplot(data.yelp, aes(weight)) +
     axis.title.y = element_text(size = k*15),
     axis.text.x = element_text(size = k*10),
     axis.text.y = element_text(size = k*10),
-    panel.background = element_rect(fill = "white"))
+    panel.background = element_rect(fill = "white"))+
+  scale_y_continuous(expand=c(.2, 0))
 
 
 # export as eps and png

@@ -58,7 +58,8 @@ for(i in 1:2){
       axis.text.x = element_text(size = k*10),
       axis.text.y = element_text(size = k*10))+
     scale_shape_manual(values=point.shapes,guide = guide_legend(title = NULL))+
-    scale_color_discrete(guide = guide_legend(title = NULL))
+    scale_color_discrete(guide = guide_legend(title = NULL))+
+    scale_y_continuous(expand=c(.2, 0))
   legend <- get_legend(g.result[[1]])
 }
 

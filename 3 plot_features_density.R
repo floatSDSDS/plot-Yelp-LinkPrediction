@@ -55,7 +55,8 @@ ggplot(data.features.melt,aes(value)) +
     axis.text.x = element_text(size = k*10),
     axis.text.y = element_text(size = k*10),
     panel.background = element_rect(size=2,color="gray",fill = "white")
-    )
+    )+
+  scale_y_continuous(expand=c(.2, 0))
 
 
 # export as eps and png
