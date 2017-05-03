@@ -28,7 +28,9 @@ data$Method<-gsub("our","Ours",data$Method)
 # select point shapes
 # check shape library by typing: ?pch
 point.shapes=15:19
+line.type=c("solid","dashed","dotted","solid","solid")
 names(point.shapes)<-unique(data$Method)
+names(line.type)<-unique(data$Method)
 g.result<-list()
 
 data.melt<-melt(data,id.vars=c("Proportion","Method"))
@@ -36,7 +38,7 @@ data.melt<-melt(data,id.vars=c("Proportion","Method"))
 for(i in 1:2){
   g.result[[i]]<-ggplot(data=filter(data.melt,variable==ifelse(i==1,"PCC","RMSE")),
                         aes(x=as.factor(Proportion),y=value,
-                            color=Method,group=Method,shape=Method))+
+                            color=Method,group=Method,shape=Method,linetype=Method))+
     geom_line(size=1.11)+
     geom_point(size=5)+
     theme_minimal()+
@@ -46,7 +48,7 @@ for(i in 1:2){
       legend.position="bottom",
       legend.title=element_blank(),
       legend.text = element_text(size=k*10),
-      legend.key.size=unit(.5,"inches"),
+      legend.key.size=unit(.8,"inches"),
       
       strip.text = element_text(size=k*12),
       strip.text.x = element_text(size = k*12),
@@ -58,6 +60,7 @@ for(i in 1:2){
       axis.text.x = element_text(size = k*10),
       axis.text.y = element_text(size = k*10))+
     scale_shape_manual(values=point.shapes,guide = guide_legend(title = NULL))+
+    scale_linetype_manual(values=line.type,guide = guide_legend(title = NULL))+
     scale_color_discrete(guide = guide_legend(title = NULL))+
     scale_y_continuous(expand=c(.2, 0))
   legend <- get_legend(g.result[[1]])

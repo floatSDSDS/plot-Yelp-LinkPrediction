@@ -38,7 +38,7 @@ data.features.melt<-melt(data.features,id.vars=c("from","to"))
 # plotting
 ggplot(data.features.melt,aes(value)) +
   #  geom_histogram(aes(y=(..count..)/sum(..count..)),color="lightblue",fill="steelblue3")+
-  stat_density(size=1,color="navy",fill=NA,kernel =  "gaussian")+
+  stat_density(size=1,color="darkgreen",fill=NA,kernel =  "gaussian")+
   theme_minimal()+
   labs(title = plot.title ,x = "",y="")+
   facet_wrap(~variable,nrow=5,ncol=4,scales = "free")+

@@ -28,8 +28,8 @@ names(data.yelp)<-c("from","to","weight")
 # plotting
 
 ggplot(data.yelp, aes(weight)) +
- geom_histogram(aes(y=(..count..)/sum(..count..)),color="lightblue",fill="steelblue3")+
-  stat_density(size=1,color="navy",fill="navy",alpha=.3,kernel =  "gaussian")+
+ geom_histogram(aes(y=(..count..)/sum(..count..)),color="limegreen",fill="darkgreen")+
+  stat_density(size=1,color="palegreen",fill="palegreen",alpha=.3,kernel =  "gaussian")+
   theme_minimal()+
   labs(title = plot.title,x = "",y="")+
   theme(

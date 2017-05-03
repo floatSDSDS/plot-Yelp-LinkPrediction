@@ -14,6 +14,7 @@ setwd(path)
 data.yelp<-as.data.frame(fread("src/yelp_ori.txt",header=F))
 names(data.yelp)<-c("from","to","weight")
 
+flag.deg=F
 
 if(flag.deg==F){
   

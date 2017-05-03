@@ -33,6 +33,9 @@ k=1.5
 # check shape library by typing: ?pch
 
 point.shapes=15:19
+line.type=c("solid","dashed","dotted","solid","solid")
+
+
 source("5 plot_evaluate_6datasets.R",encoding = "UTF-8")
 
 # check the plots in the folder "folder.name"

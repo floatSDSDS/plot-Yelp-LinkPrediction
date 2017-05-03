@@ -4,6 +4,9 @@ library(gridExtra)
 library(grid)
 library(RColorBrewer)
 library(Cairo)
+library(showtext)
+
+
 
 f_linearnorm2<-function(feature){
   delta=max(feature)-min(feature)
@@ -14,7 +17,7 @@ f_linearnorm2<-function(feature){
 
 # set path and output file names
 path="E:/git/plot-yelp"
-output.name<-"heatmap_reverse"
+output.name<-"test_font"
 
 
 # set output file size and font zooming level

@@ -27,7 +27,17 @@
   - `4 heatmap.R` 更改路径，source code
   - 可调参数同1
   - 输出结果在../plot/heatmap
-5. 六个数据集指标折线图
+5. 热力图2
+  - 打开`4.1.0 heatmap template.R`，更改路径，source code
+  - 可调参数：
+    - 昨天三幅图中对应三个模板，修改要画的模板序号，template.ith，c(无所谓长度)
+    - 配色palette，默认"Greens"，可以查看`display.brewer.all()`和`brewer.pal.info`，选择自己喜欢的配色
+    - 对应三个模板的输出文件长宽g.width,g.height，注意顺序对齐
+    - 字体缩放倍率k
+    - 一系列图片横纵坐标标签偏移量，角度调试参数，注意顺序对齐
+    - colorbar的长宽，注意顺序对齐
+    - 输出结果在../plot/heatmap/heatmap170502Selected
+6. 六个数据集指标折线图
   - 打开 `5 six dataset main.R`，调整设定，source code
   - 图片细节在`5plot_evaluate_6dataset.R`
   - 可调参数同1

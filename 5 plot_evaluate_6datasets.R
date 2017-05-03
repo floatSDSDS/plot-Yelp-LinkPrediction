@@ -2,6 +2,8 @@ g.all<-list()
 evaluate.list<-c("PCC","RMSE")
 
 names(point.shapes)<-unique(raw$Methods)
+names(line.type)<-unique(data$Method)
+
 list.dataset<-unique(raw$Dataset)
 
 for(j in 1:2){
@@ -16,7 +18,7 @@ for(j in 1:2){
     label.temp<-seq(min(data.temp.2$value),max(data.temp.2$value),length.out=4)
     label.temp<-round(label.temp,3)
     g.all[[i]]<-ggplot(data=data.temp.2,
-                       aes(Proportion,value,color=Methods,shape = Methods,group=Methods))+
+                       aes(Proportion,value,color=Methods,shape = Methods,group=Methods,linetype=Methods))+
       geom_line(size=1.11)+
       geom_point(size=5)+
       theme_minimal()+
@@ -35,6 +37,7 @@ for(j in 1:2){
         axis.text.y = element_text(size = k*10),
         panel.background = element_rect(fill = "white"))+
       scale_shape_manual(values=point.shapes,guide = guide_legend(title = NULL))+
+      scale_linetype_manual(values=line.type,guide = guide_legend(title = NULL))+
       scale_color_discrete(guide = guide_legend(title = NULL))+
       scale_y_continuous(expand=c(.2, 0),breaks=label.temp)#labels = fmt_dcimals(4))
 

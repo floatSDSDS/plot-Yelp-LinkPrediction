@@ -8,8 +8,7 @@ setwd(path)
 g.width=16
 g.height=16
 k=1
-flag.deg=F
-theshold.quantile<-0.98
+# theshold.quantile<-0.98
 layer<-6
 
 
