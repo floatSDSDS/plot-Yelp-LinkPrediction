@@ -18,7 +18,7 @@ output.name<-c("basic","legendTop","reverse-legendRight")
 # A: basic
 # B: legendTop
 # C: reverse-legendRight
-template.ith=c(1)
+template.ith=c(1,2,3)
 
 # use 'display.brewer.all()' and 'brewer.pal.info' command to check for palette
 palette="Greens"

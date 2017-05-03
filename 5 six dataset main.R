@@ -6,7 +6,12 @@ library(RColorBrewer)
 library(plyr)
 library(gridExtra)
 library(grid)
-library(Cairo)
+library(showtext)
+
+
+showtext.auto()
+showtext.opts(dpi = 120)
+font.add("Times New Roman", "times.ttf") 
 
 # set path
 #############################################
