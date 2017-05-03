@@ -13,6 +13,8 @@ for(j in 1:2){
     data.temp<-raw[,c(1,2,3,5)]
   names(data.temp)[4]<-"value"
   
+  g.all[[j]]<-ggplot(data = data.temp)
+  
   for(i in 1:6){
     data.temp.2<-filter(data.temp,Dataset==list.dataset[i])
     label.temp<-seq(min(data.temp.2$value),max(data.temp.2$value),length.out=4)

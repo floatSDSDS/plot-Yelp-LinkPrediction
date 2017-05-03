@@ -4,6 +4,7 @@ library(gridExtra)
 library(grid)
 library(RColorBrewer)
 library(Cairo)
+library(showtext)
 
 showtext.auto()
 showtext.opts(dpi = 120)
@@ -17,7 +18,7 @@ output.name<-c("basic","legendTop","reverse-legendRight")
 # A: basic
 # B: legendTop
 # C: reverse-legendRight
-template.ith=c(1,2,3)
+template.ith=c(1)
 
 # use 'display.brewer.all()' and 'brewer.pal.info' command to check for palette
 palette="Greens"
@@ -32,7 +33,7 @@ k=2
 # configuring for 3 templates
 x.hjust=c(.55,.55,.8)
 x.vjust=c(.65,.65,.75)
-x.angle=c(15,15,45)
+x.angle=c(45,15,45)
 
 y.hjust=c(.6,.6,.9)
 y.vjust=c(.9,.9,.8)
