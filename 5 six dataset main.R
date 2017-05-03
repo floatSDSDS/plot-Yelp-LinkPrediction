@@ -36,7 +36,7 @@ point.shapes=15:19
 line.type=c("solid","dashed","dotted","solid","solid")
 
 
-source("5 plot_evaluate_6datasets.R",encoding = "UTF-8")
+source("5 plot_evaluate_6datasets.R")
 
 # check the plots in the folder "folder.name"
 # there may be problems with font, so you can set all the elements beside then return the code back to me.

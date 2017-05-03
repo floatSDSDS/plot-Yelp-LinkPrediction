@@ -2,7 +2,7 @@ g.all<-list()
 evaluate.list<-c("PCC","RMSE")
 
 names(point.shapes)<-unique(raw$Methods)
-names(line.type)<-unique(data$Method)
+names(line.type)<-unique(raw$Methods)
 
 list.dataset<-unique(raw$Dataset)
 
@@ -47,6 +47,8 @@ for(j in 1:2){
     
     g.all[[i]]<-g.all[[i]]+theme(legend.position = "none")
   }
+  
+  
   
   # export as eps 
   cairo_ps(filename=paste("plot/evaluation/",paste(output.name,evaluate.list[j],Sys.Date(),sep="-"),".eps",sep=""),
