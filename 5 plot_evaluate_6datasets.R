@@ -3,6 +3,7 @@ evaluate.list<-c("PCC","RMSE")
 
 names(point.shapes)<-unique(raw$Methods)
 names(line.type)<-unique(raw$Methods)
+names(colors)<-unique(raw$Methods)
 
 list.dataset<-unique(raw$Dataset)
 
@@ -12,6 +13,8 @@ for(j in 1:2){
   else
     data.temp<-raw[,c(1,2,3,5)]
   names(data.temp)[4]<-"value"
+  data.temp$Dataset<-factor(data.temp$Dataset,
+                            levels=c("Celegans","USAir","Lesmis","NetScience","Geom","CatCortex"))
   
   g.all[[j]]<-ggplot(data = data.temp,
                      aes(Proportion,value,
@@ -20,24 +23,27 @@ for(j in 1:2){
     geom_point(size=5)+
     theme_minimal()+
     facet_wrap(~Dataset, scales = "free")+
+    labs(x="Proportion",y=ifelse(j==1,"PCC","RMSE"))+
     theme(
       text=element_text(family = "Times New Roman"),
       legend.position="bottom",
       legend.text = element_text(size=k*10),
-      legend.key.size=unit(.5,"inches"),
+      legend.key.size=unit(.8,"inches"),
       strip.text.x = element_text(size = k*12),
       panel.border = element_rect(size = 1,fill=NA),
       plot.title = element_text(size=k*15,hjust = 0.5),
-      axis.title.x = element_text(size = k*10),
-      axis.title.y = element_text(size = k*10),
+      axis.title.x = element_text(size = k*18),
+      axis.title.y = element_text(size = k*18),
       axis.text.x = element_text(size = k*10),
       axis.text.y = element_text(size = k*10),
       panel.background = element_rect(fill = "white")
     )+
     scale_shape_manual(values=point.shapes,guide = guide_legend(title = NULL))+
     scale_linetype_manual(values=line.type,guide = guide_legend(title = NULL))+
-    scale_color_discrete(guide = guide_legend(title = NULL))+
-    scale_y_continuous(expand=c(.2, 0))#labels = fmt_dcimals(4))
+    scale_color_manual(values=colors,guide = guide_legend(title = NULL))+
+    scale_y_continuous(
+      expand=c(.1, 0),limits=c(0,NA),
+      labels = fmt_dcimals(2))#labels = fmt_dcimals(4))
   
   # for(i in 1:6){
   #   data.temp.2<-filter(data.temp,Dataset==list.dataset[i])

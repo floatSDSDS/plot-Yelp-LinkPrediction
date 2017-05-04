@@ -24,7 +24,7 @@ source("5 preprocess.R")
 
 #############################################
 # set folder to store plots
-output.name="plot-6datasets"
+output.name="plot-new6"
 plot.title=""
 # set output size (inch)
 g.width=16
@@ -38,10 +38,12 @@ k=1.5
 # check shape library by typing: ?pch
 
 point.shapes=15:19
-line.type=c("solid","dashed","dotted","solid","solid")
+line.type=c("solid","solid","dotted","dashed","solid")
+colors=c("#009925","#EEB211","#3369E8","#D366EE","#EE8166")
 
+# an old version plot for 5 evaluation
+# source("5 plot_evaluate_6datasets.R")
 
-source("5 plot_evaluate_6datasets.R")
-
+source("5 plot_evaluate_6datasets2.R")
 # check the plots in the folder "folder.name"
 # there may be problems with font, so you can set all the elements beside then return the code back to me.

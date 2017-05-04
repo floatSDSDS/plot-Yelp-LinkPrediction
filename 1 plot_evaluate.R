@@ -11,7 +11,7 @@ output.name<-"plot-yelp"
 
 # set output file size and font zooming level
 g.width=12
-g.height=7
+g.height=5
 plot.title=""
 k=1.5
 
@@ -29,8 +29,12 @@ data$Method<-gsub("our","Ours",data$Method)
 # check shape library by typing: ?pch
 point.shapes=15:19
 line.type=c("solid","dashed","dotted","solid","solid")
+colors=c("#009925","#EEB211","#3369E8","#D366EE","#EE8166")
+
 names(point.shapes)<-unique(data$Method)
 names(line.type)<-unique(data$Method)
+names(colors)<-unique(raw$Methods)
+
 g.result<-list()
 
 data.melt<-melt(data,id.vars=c("Proportion","Method"))
@@ -48,8 +52,7 @@ for(i in 1:2){
       legend.position="bottom",
       legend.title=element_blank(),
       legend.text = element_text(size=k*10),
-      legend.key.size=unit(.8,"inches"),
-      
+      legend.key.size=unit(.7,"inches"),
       strip.text = element_text(size=k*12),
       strip.text.x = element_text(size = k*12),
       panel.border = element_rect(size = 2,fill=NA),
@@ -61,8 +64,12 @@ for(i in 1:2){
       axis.text.y = element_text(size = k*10))+
     scale_shape_manual(values=point.shapes,guide = guide_legend(title = NULL))+
     scale_linetype_manual(values=line.type,guide = guide_legend(title = NULL))+
-    scale_color_discrete(guide = guide_legend(title = NULL))+
-    scale_y_continuous(expand=c(.2, 0))
+    scale_color_manual(values=colors,guide = guide_legend(title = NULL))+
+    scale_y_continuous(expand=c(.1, 0))#+
+    # guides(
+    #   color=guide_legend(ncol = 5,keywidth=6),
+    #   linetype=guide_legend(ncol=5,keywidth=6),
+    #   shape=guide_legend(ncol=5,keywidth=8))
   legend <- get_legend(g.result[[1]])
 }
 
