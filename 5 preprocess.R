@@ -8,6 +8,9 @@ raw$Pearson<-as.double(raw$Pearson)
 raw$RMSE<-as.double(as.character(raw$RMSE))
 raw$Methods<-gsub("xia","Zhu et al.", raw$Methods)
 raw$Methods<-gsub("our","Ours", raw$Methods)
+raw$Methods<-as.factor(raw$Methods)
+raw$Methods<-factor(raw$Methods,levels=c("rWAA","rWCN","rWRA","Zhu et al.","RF","GBDT","SVM"
+                                         ))
 
 raw$Dataset<-gsub("USAir1","USAir",raw$Dataset)
 raw$Dataset<-gsub("celegans","Celegans",raw$Dataset)

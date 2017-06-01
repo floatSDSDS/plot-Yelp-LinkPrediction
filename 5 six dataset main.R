@@ -37,9 +37,9 @@ k=1.5
 # select point shapes
 # check shape library by typing: ?pch
 
-point.shapes=15:19
-line.type=c("solid","solid","dotted","dashed","solid")
-colors=c("#009925","#EEB211","#3369E8","#D366EE","#EE8166")
+point.shapes=c(15:19,8,6)
+line.type=c("solid","solid","dotted","dashed","solid","twodash","longdash")
+colors=c("#009925","#EEB211","#3369E8","#D366EE","#EE8166","#102177","#7FA84A")
 
 # an old version plot for 5 evaluation
 # source("5 plot_evaluate_6datasets.R")

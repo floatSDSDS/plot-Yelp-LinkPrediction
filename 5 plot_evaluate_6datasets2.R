@@ -39,9 +39,9 @@ for(j in 1:2){
         axis.text.x = element_text(size = k*10),
         axis.text.y = element_text(size = k*10),
         panel.background = element_rect(fill = "white"))+
-      scale_shape_manual(values=point.shapes,guide = guide_legend(title = NULL))+
-      scale_linetype_manual(values=line.type,guide = guide_legend(title = NULL))+
-      scale_color_manual(values=colors,guide = guide_legend(title = NULL))+
+      scale_shape_manual(values=point.shapes,guide = guide_legend(title = NULL,nrow = 1))+
+      scale_linetype_manual(values=line.type,guide = guide_legend(title = NULL,nrow = 1))+
+      scale_color_manual(values=colors,guide = guide_legend(title = NULL,nrow = 1))+
       scale_y_continuous(
         expand=c(.1, 0),limits=c(0,ifelse(j==2&i==2,0.008,NA)),
         labels = fmt_dcimals(2))
