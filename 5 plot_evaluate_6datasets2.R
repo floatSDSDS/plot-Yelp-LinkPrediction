@@ -30,7 +30,7 @@ for(j in 1:2){
         text=element_text(family = "Times New Roman"),
         legend.position="bottom",
         legend.text = element_text(size=k*10),
-        legend.key.size=unit(.9,"inches"),
+        legend.key.size=unit(.4,"inches"),
         strip.text.x = element_text(size = k*12),
         panel.border = element_rect(size = 1,fill=NA),
         plot.title = element_text(size=k*15,hjust = 0.5),
