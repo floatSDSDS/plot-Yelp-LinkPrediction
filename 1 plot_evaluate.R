@@ -4,6 +4,7 @@ library(dplyr)
 library(gridExtra)
 library(grid)
 library(Cairo)
+library(showtext)
 
 showtext.auto()
 showtext.opts(dpi = 120)
@@ -50,11 +51,11 @@ for(i in 1:2){
                             color=Method,group=Method,shape=Method,linetype=Method))+
     geom_line(size=1.11)+
     geom_point(size=5)+
-    annotate("text", x = .8, y = 0, label = ifelse(i==1,"(a)","(b)"),size=k*8)+
+    annotate("text", x = 1.1, y = 0, label = ifelse(i==1,"(a)","(b)"),size=k*6,family="Times New Roman")+
     theme_minimal()+
     labs(title = plot.title,x = "Proportion",y=ifelse(i==1,"PCC","RMSE"))+
     theme(
-      text=element_text(family = "serif"),
+      text=element_text(family = "Times New Roman"),
       legend.position="bottom",
       legend.title=element_blank(),
       legend.text = element_text(size=k*10),
@@ -62,7 +63,6 @@ for(i in 1:2){
       strip.text = element_text(size=k*12),
       strip.text.x = element_text(size = k*12),
       panel.border = element_rect(size = 2,fill=NA),
-      
       plot.title = element_text(size=k*15,hjust = 0.5),
       axis.title.x = element_text(size = k*15),
       axis.title.y = element_text(size = k*15),
@@ -71,7 +71,8 @@ for(i in 1:2){
     scale_shape_manual(values=point.shapes,guide = guide_legend(title = NULL,nrow = 1))+
     scale_linetype_manual(values=line.type,guide = guide_legend(title = NULL,nrow = 1))+
     scale_color_manual(values=colors,guide = guide_legend(title = NULL,nrow = 1))+
-    scale_y_continuous(expand=c(.1, 0))#+
+    scale_y_continuous(expand=c(.1, 0))+
+    scale_x_discrete(expand=c(.05,.1))#+
     # guides(
     #   color=guide_legend(ncol = 5,keywidth=6),
     #   linetype=guide_legend(ncol=5,keywidth=6),
